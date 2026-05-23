@@ -11,3 +11,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-link{
+  margin-left: 40px;
+}
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+
+
+/* footer */
+.footer-link{
+  display:block;
+  text-decoration:none;
+  color:#666;
+  margin-bottom:16px;
+  transition:.3s;
+}
+
+.footer-link:hover{
+  color:#387ED1;
+  transform:translateX(5px);
+}
+
+.market-item{
+  color:#666;
+  margin-bottom:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.market-item:hover{
+  color:#387ED1;
+}
