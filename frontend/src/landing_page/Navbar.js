@@ -36,7 +36,7 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item mx-2">
               <Link className="nav-link" to="/signup">
                 Signup
@@ -64,6 +64,20 @@ function Navbar() {
             <li className="nav-item mx-2">
               <Link className="nav-link" to="/support">
                 Support
+              </Link>
+            </li>
+
+            {/* Dashboard Link */}
+            <li className="nav-item mx-2">
+              <Link
+                className="btn btn-primary px-4"
+                to="/dashboard"
+                style={{
+                  borderRadius: "8px",
+                  fontWeight: "500",
+                }}
+              >
+                Dashboard
               </Link>
             </li>
           </ul>

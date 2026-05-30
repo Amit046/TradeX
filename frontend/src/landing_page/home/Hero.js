@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -52,7 +53,10 @@ function Hero() {
           </p>
 
           <div className="d-flex gap-3 mt-5">
-            <button
+            {/* Signup Button */}
+
+            <Link
+              to="/signup"
               style={{
                 backgroundColor: "#387ED1",
                 border: "none",
@@ -61,13 +65,19 @@ function Hero() {
                 borderRadius: "12px",
                 fontWeight: "600",
                 fontSize: "17px",
-                transition: ".3s",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               Get Started
-            </button>
+            </Link>
 
-            <button
+            {/* Dashboard Button */}
+
+            <Link
+              to="/dashboard"
               style={{
                 backgroundColor: "#fff",
                 border: "1px solid #ddd",
@@ -76,10 +86,14 @@ function Hero() {
                 borderRadius: "12px",
                 fontWeight: "600",
                 fontSize: "17px",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               Explore Markets
-            </button>
+            </Link>
           </div>
 
           {/* Feature Cards */}

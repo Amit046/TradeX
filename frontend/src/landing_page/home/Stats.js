@@ -62,6 +62,7 @@ function Stats() {
               className="text-decoration-none fw-semibold"
               style={{
                 color: "#387ED1",
+                
               }}
             >
               Try Demo <FaArrowRight size={12} />

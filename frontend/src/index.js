@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import "./index.css";
 
 import HomePage from "./landing_page/home/HomePage";
@@ -13,21 +14,38 @@ import SupportPage from "./landing_page/support/SupportPage";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 
+import DashboardPage from "./dashboard/DashboardPage";
+
+function AppLayout() {
+  const location = useLocation();
+
+  const isDashboard = location.pathname.startsWith("/dashboard");
+
+  return (
+    <>
+      {!isDashboard && <Navbar />}
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/support" element={<SupportPage />} />
+
+        {/* Dashboard */}
+        <Route path="/dashboard/*" element={<DashboardPage />} />
+      </Routes>
+
+      {!isDashboard && <Footer />}
+    </>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <Navbar />
-
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/product" element={<ProductPage />} />
-      <Route path="/pricing" element={<PricingPage />} />
-      <Route path="/support" element={<SupportPage />} />
-    </Routes>
-
-    <Footer />
+    <AppLayout />
   </BrowserRouter>,
 );
